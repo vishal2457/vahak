@@ -1,0 +1,21 @@
+const func = (s) => {
+    let arr = s.split('');
+    let numberArr = arr.map(item => item);
+    let dups = []
+    for(let [index, value] of numberArr.entries()) {
+        for (let i=0; i<=9; i++) {
+            numberArr[index] =  i.toString();
+            let n = numberArr.join('')
+            if(n%3 == 0) {
+                dups.push(n);
+
+            }
+        }
+        numberArr[index] = arr[index]
+    }
+   let uniq = [...new Set(dups)];
+
+    return uniq.length
+  }
+  
+ console.log(func("0081")); 

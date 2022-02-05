@@ -1,0 +1,9 @@
+@import "src/styles/variables.scss";
+.wrapper {
+    background-color: $primary;
+    text-align:center;
+    padding: 2.5rem 0rem 2.5rem 0rem;
+    h1 {
+        color: white
+    }
+}

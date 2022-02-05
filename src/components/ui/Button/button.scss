@@ -1,0 +1,22 @@
+@import "src/styles/variables.scss";
+
+.btn-primary, .btn-primary:focus, .btn-primary:active {
+    color: $light-text;
+    background-color: $secondary ;
+    border-color: $secondary;
+    box-shadow: none !important;
+    width: 100%;
+  }
+
+  .btn {
+    display: inline-block;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    border-radius: 0.25rem;
+  }

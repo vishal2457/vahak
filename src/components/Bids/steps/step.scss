@@ -1,0 +1,19 @@
+@import "src/styles/variables.scss";
+@import "src/styles/App.scss";
+
+.step-wrapper {
+    margin: 1rem;
+    // text-align: center;
+    width: 40%
+}
+
+
+.edit-button {
+    color: $secondary,
+}
+
+
+.hr {
+    border-top: 0;
+}
+
