@@ -1,4 +1,4 @@
-import React, { Ref, SyntheticEvent } from "react";
+import React, { useState } from "react";
 import { BidContext } from "../../../../contexts/BidInfo";
 import { EditButton } from "./EditButton";
 import "../step.scss";
@@ -14,6 +14,7 @@ type otpType = {
 
 export const Otp = ({ handleChange, otpInputs }: otpType) => {
   const { state, functions } = React.useContext(BidContext);
+  const [invalidOtp, setInvalidOtp] = useState(false);
 
   //input refs
   let ref1: any = React.useRef();
@@ -23,8 +24,11 @@ export const Otp = ({ handleChange, otpInputs }: otpType) => {
 
   const verifyOtp = () => {
     if (otpInputs.join("") == "1234") {
+      setInvalidOtp(false)
       functions?.changeStep(5);
+      return
     }
+    setInvalidOtp(true)
   };
 
   /**
@@ -40,12 +44,10 @@ export const Otp = ({ handleChange, otpInputs }: otpType) => {
     let val = e.target.value;
     if (val.length > 1) return;
     handleChange(e.target.value, index);
-
+    setInvalidOtp(false)
     switch (index) {
       case 0:
         if (val) {
-          console.log(ref2, "check me");
-
           ref2.current?.focus();
         }
         return;
@@ -88,30 +90,36 @@ export const Otp = ({ handleChange, otpInputs }: otpType) => {
       </div>
       <div className="d-flex m-t-5 m-b-4">
         <OtpInput
+          invalid={invalidOtp}
           ref={ref1}
           onChange={(e) => handleChangeLocal(e, 0)}
           value={otpInputs[0]}
         />
         <OtpInput
+          invalid={invalidOtp}
           ref={ref2}
           onChange={(e) => handleChangeLocal(e, 1)}
           value={otpInputs[1]}
         />
         <OtpInput
+          invalid={invalidOtp}
           ref={ref3}
           onChange={(e) => handleChangeLocal(e, 2)}
           value={otpInputs[2]}
         />
         <OtpInput
+          invalid={invalidOtp}
           ref={ref4}
           onChange={(e) => handleChangeLocal(e, 3)}
           value={otpInputs[3]}
         />
       </div>
       <div className="text-center m-t-5 m-b-4">
+        {invalidOtp ? <small style={{color: "red"}}>Invalid otp</small> : null }
+        
         <p className="request-again">Request Otp again</p>
       </div>
-      <Button type="submit">Verify via OTP</Button>
+      <Button type="submit" disabled>Verify via OTP</Button>
     </div>
   );
 };

@@ -1,10 +1,11 @@
-import React, { Ref } from "react";
+import clsx from "clsx";
+import React from "react";
 import "./otpinput.scss";
 interface OtpProps extends React.ComponentPropsWithoutRef<"input"> {
-  ref: any;
+  invalid: boolean;
 }
 
 export const OtpInput = React.forwardRef((props: OtpProps, ref: any) => {
-  let { type, ...rest } = props;
-  return <input className="otp" type="number" {...rest} ref={ref} />;
+  let { type, invalid, ...rest } = props;
+  return <input className={clsx('otp', {error: invalid})} type="number" {...rest} ref={ref} />;
 });

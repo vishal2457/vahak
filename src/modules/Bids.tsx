@@ -10,14 +10,14 @@ import {
 } from "../types/Bids";
 import { Header, LogoHeader } from "../components/ui";
 import { BidContext } from "../contexts/BidInfo";
-import {
-  StepOne
-} from "../components/Bids/steps/StepOne";
+import { StepOne } from "../components/Bids/steps/StepOne";
+import { Loading } from "../components/ui/Loading/Loading";
 const StepTwo = React.lazy(() => import("../components/Bids/steps/StepTwo")); // Lazy-loaded
-const StepThree = React.lazy(() => import("../components/Bids/steps/StepThree")); 
-const StepFour = React.lazy(() => import("../components/Bids/steps/StepFour")); 
-const StepFive = React.lazy(() => import("../components/Bids/steps/StepFive")); 
-
+const StepThree = React.lazy(
+  () => import("../components/Bids/steps/StepThree")
+);
+const StepFour = React.lazy(() => import("../components/Bids/steps/StepFour"));
+const StepFive = React.lazy(() => import("../components/Bids/steps/StepFive"));
 
 //INITITAL STATE
 let initialState: BidState = {
@@ -55,7 +55,7 @@ function reducer(state: BidState, action: BidAction) {
       return { ...state, ...payload };
 
     case BidActionTypes.ADD_USER_DETAILS:
-      return {...state, ...payload}
+      return { ...state, ...payload };
 
     default:
       throw new Error();
@@ -119,14 +119,10 @@ export const Bids = () => {
   }, [state.currentStep]);
 
   return (
-    <Suspense fallback={<p>Loading...</p>}>
-
     <BidContext.Provider value={{ state, functions: bidFunctions }}>
       <LogoHeader />
       <Header />
-      {stepRenderer}
+      <Suspense fallback={<Loading />}>{stepRenderer}</Suspense>
     </BidContext.Provider>
-    </Suspense>
-
   );
 };

@@ -1,46 +1,42 @@
-# Getting Started with Create React App
+# Vahak bid demo app
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Project submitted by vishal acharya.
 
-## Available Scripts
+## Summary and approach
 
-In the project directory, you can run:
+Project is created using latest cra version.
+I have used context api since there was a lot of data sharing between components.
+Instead of useState i have opted for usereducer to manage data since it is more clean and maintainable imo.
+Used basic typescript to obtain basic type safety in the app.
+Use of scss to create reusable classes.
+React suspense (lazy loading) for performance boost (It will be not needed in such small app but anyways...)
 
-### `npm start`
+## What i could have done better (if i had some more time)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+-I could have written better modular css classes.
+-Maybe could create a better fallback for suspense loading.
+-More flexible ui components.
+-Mui like inputs.
+-A little better folder structure.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Folder structure
 
-### `npm test`
+  |-- Vahak
+    |-- package.json
+    |-- modules
+        |-- Bids.tsx
+    |-- styles
+    |-- types
+    |-- components
+        |-- svgs
+        |-- ui
+        |-- Bids
+            |-- steps
+                |-- allstepsfiles.tsx
+                |-- Subs
+                    |-- Sub components used in steps main files.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+## Netlify app 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+[Link text Here](https://upbeat-yonath-267772.netlify.app/)

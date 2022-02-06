@@ -1,10 +1,9 @@
 import React from "react";
 import { BidContext } from "../../../../contexts/BidInfo";
-import { EditButton } from "./EditButton";
 import rupee from "./rupee.png";
 
 export const BidDetails = () => {
-  let { state, functions } = React.useContext(BidContext);
+  let { state } = React.useContext(BidContext);
 
   return (
     <div className="m-t-4">

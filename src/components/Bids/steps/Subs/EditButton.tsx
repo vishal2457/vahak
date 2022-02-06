@@ -1,6 +1,5 @@
 import React from "react";
 import { EditIcon } from "../../../svgs";
-import { Rupee } from "../../../svgs/Rupee";
 import "../step.scss";
 
 export const EditButton = ({onClick}: {onClick: () => void}) => {

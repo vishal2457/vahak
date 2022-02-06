@@ -9,11 +9,11 @@ import { UserDetails } from "../../../types/Bids";
 import { Formik } from "formik";
 import * as Yup from "yup";
 import wpLogo from "./whatsapp.png"
-
+let phoneNumberRegex = /^(?:(?:\+|0{0,2})91(\s*[\-]\s*)?|[0]?)?[7896]\d{9}$/
 const userDetailSchema = Yup.object().shape({
   whatsappUpdates: Yup.boolean().required("Required"),
   name: Yup.string().required("Required"),
-  number: Yup.number().required("Required"),
+  number: Yup.string().required("Required").matches(phoneNumberRegex, "Invalid phone number"),
 });
 
 const StepThree = () => {

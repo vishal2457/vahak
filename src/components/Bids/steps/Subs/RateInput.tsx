@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { RateType } from "../../../../types/Bids";
 import { Checkbox } from "../../../ui";
 import rupee from "./rupee.png";
@@ -22,7 +22,7 @@ export const RateInput = ({
   return (
     <div className="m-t-5 m-b-3">
       <div className="display-rate-center m-b-5">
-        <img src={rupee} style={{ width: "5%" }} />
+        <img src={rupee} style={{ width: "5%" }} alt="rupees" />
         {hideInput ? (
           <h4 className="rate-display">{ Number(rateState?.rate).toLocaleString()}</h4>
         ) : (
