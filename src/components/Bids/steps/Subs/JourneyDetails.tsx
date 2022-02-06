@@ -16,15 +16,15 @@ export const JourneyDetails = () => {
   };
 
   return (
-    <div>
-      <div className="d-flex justify-content-between">
+    <div className="m-t-5">
+      <div className="d-flex justify-content-between m-b-5">
         <div>
           <small className="text-muted text-uppercase">Journey Details</small>
-          <p>
-            {state?.journeyDetails?.sourceLocation}/
+          <p className="lead m-t-3 m-b-1">
+            {state?.journeyDetails?.sourceLocation}&nbsp;/&nbsp;
             {state?.journeyDetails?.destination}
           </p>
-          <p>
+          <p className="lead m-t-3 m-b-1">
             {getPersonText()}, {state?.journeyDetails?.carType}{" "}
           </p>
         </div>

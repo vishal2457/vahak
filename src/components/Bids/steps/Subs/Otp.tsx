@@ -3,6 +3,7 @@ import { BidContext } from "../../../../contexts/BidInfo";
 import { EditButton } from "./EditButton";
 import "../step.scss";
 import { OtpInput } from "../../../ui/OtpInput/OtpInput";
+import { Button } from "../../../ui";
 
 type stateKeyType = 0 | 1 | 2 | 3;
 
@@ -16,17 +17,15 @@ export const Otp = ({ handleChange, otpInputs }: otpType) => {
 
   //input refs
   let ref1: any = React.useRef();
-  let ref2:any = React.useRef();
+  let ref2: any = React.useRef();
   let ref3: any = React.useRef();
   let ref4: any = React.useRef();
 
-
   const verifyOtp = () => {
-    if(otpInputs.join('') == "1234") {
-      functions?.changeStep(5)
+    if (otpInputs.join("") == "1234") {
+      functions?.changeStep(5);
     }
-  }
-
+  };
 
   /**
    *
@@ -39,55 +38,55 @@ export const Otp = ({ handleChange, otpInputs }: otpType) => {
     index: stateKeyType
   ) => {
     let val = e.target.value;
-    if(val.length > 1) return
+    if (val.length > 1) return;
     handleChange(e.target.value, index);
 
-   switch (index) {
-     case 0:
-       if(val) {
-         console.log(ref2, "check me");
-         
-        ref2.current?.focus()
-       }
-       return
+    switch (index) {
+      case 0:
+        if (val) {
+          console.log(ref2, "check me");
 
-       case 1:
-        if(val) {
-          ref3.current?.focus()
-         }else {
-          ref1.current?.focus()
-         }
-       return
-       case 2:
-        if(val) {
-          ref4.current?.focus()
-         }else {
-          ref2.current?.focus()
-         }
-       return
-       case 3:
-        if(val) {
-          verifyOtp()
-         }else {
-          ref3.current?.focus()
-         }
-       return
-   
-     default:
-       return
-   }
+          ref2.current?.focus();
+        }
+        return;
+
+      case 1:
+        if (val) {
+          ref3.current?.focus();
+        } else {
+          ref1.current?.focus();
+        }
+        return;
+      case 2:
+        if (val) {
+          ref4.current?.focus();
+        } else {
+          ref2.current?.focus();
+        }
+        return;
+      case 3:
+        if (val) {
+          verifyOtp();
+        } else {
+          ref3.current?.focus();
+        }
+        return;
+
+      default:
+        return;
+    }
   };
 
   return (
     <div>
-      <p>We've sent an OTP to your mobile number, Please enter it</p>
+      <p className="m-t-4">We've sent an OTP to your mobile number, Please enter it</p>
       <div className="d-flex">
         <p className="m-r-2">
           below to submit your bid <b>{state?.userDetails?.number}</b>
         </p>
         <EditButton onClick={() => functions?.changeStep(3)} />
       </div>
-      <div className="d-flex">
+      <div className="d-flex m-t-5 m-b-4">
         <OtpInput
           ref={ref1}
           onChange={(e) => handleChangeLocal(e, 0)}
@@ -109,7 +108,10 @@ export const Otp = ({ handleChange, otpInputs }: otpType) => {
           value={otpInputs[3]}
         />
       </div>
-      <div></div>
+      <div className="text-center m-t-5 m-b-4">
+        <p className="request-again">Request Otp again</p>
+      </div>
+      <Button type="submit">Verify via OTP</Button>
     </div>
   );
 };

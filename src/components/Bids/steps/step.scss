@@ -2,14 +2,33 @@
 @import "src/styles/App.scss";
 
 .step-wrapper {
-    margin: 1rem;
     // text-align: center;
-    width: 40%
+    width: 40%;
+    margin: 1rem auto;
 }
 
 
+@media (max-width:320px)  { 
+    .step-wrapper {
+        // text-align: center;
+        width: 75%;
+        margin:1rem auto;
+    }
+    
+ }
+
+
+ @media (max-width:480px)  { 
+    .step-wrapper {
+        // text-align: center;
+        width: 70%;
+        margin:1rem auto;
+    }  
+ }
+
 .edit-button {
-    color: $secondary,
+    color: $secondary;
+    font-weight:700
 }
 
 
@@ -17,3 +36,53 @@
     border-top: 0;
 }
 
+.rateInput, .rateInput:focus-visible {
+    border: none;
+    font-size: 45px;
+    padding: 0;
+    margin: 0 0 0 15px;
+    caret-color: #0f53fb;
+    outline: none;
+    font-weight: 800;
+    height: 40px;
+}
+
+
+.rate-display {
+    font-size: 45px;
+    padding: 0;
+    margin: -10px 0 0 15px;
+    font-weight: 700
+
+}
+
+
+.display-rate {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+.display-rate-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.request-again {
+    color: $secondary;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.wp-container {
+    padding: 1em;
+    background-color: #f8f8f8;
+    border: 1px solid #ced4da;
+}
+
+.wp-img {
+    width: 17px;
+    height: 17px;
+    padding: 0 5px;
+}

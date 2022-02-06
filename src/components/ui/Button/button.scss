@@ -6,6 +6,11 @@
     border-color: $secondary;
     box-shadow: none !important;
     width: 100%;
+    &:disabled {
+      background-color: #6490ff;
+    border-color: #6490ff;
+
+    }
   }
 
   .btn {
@@ -16,7 +21,8 @@
     text-decoration: none;
     vertical-align: middle;
     cursor: pointer;
-    padding: 0.375rem 0.75rem;
-    font-size: 1rem;
+    padding: 0.500rem 0.75rem;
+    font-size: 1.1rem;
+    font-weight: 600;
     border-radius: 0.25rem;
   }

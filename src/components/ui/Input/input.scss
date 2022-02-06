@@ -1,0 +1,24 @@
+@import "src/styles/variables.scss";
+@import "src/styles/App.scss";
+.form-control, .form-control:focus-visible {
+    display: block;
+    width: 100%;
+    padding: 0.6rem 0.95rem;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.5;
+    color: $primary;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 0.25rem;
+    outline: $primary;
+    box-sizing: border-box;
+    &.error {
+    border: 1px solid #e22c14;
+    outline: #e22c14;
+    }
+}

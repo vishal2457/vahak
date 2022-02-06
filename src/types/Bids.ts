@@ -11,18 +11,23 @@ export enum BidActionTypes {
     type: BidActionTypes
   };
   
-  type JourneyDetailType = {
+ export type JourneyDetailType = {
       sourceLocation: string
       destination: string
       carType:"HatchBack"|"Sedan"|"SUV"
       noOfTravellers: number
   }
   
-  type UserDetails = {
-      number : number|null,
+ export type UserDetails = {
+      number : number|undefined,
       name: string
       remarks?: string
       whatsappUpdates: boolean
+  }
+
+  export type RateType = {
+    rate: number|undefined
+    negotiable: boolean|undefined
   }
   
   
@@ -30,10 +35,7 @@ export enum BidActionTypes {
   
   export type BidState = {
       journeyDetails?: JourneyDetailType
-      rateDetails?: {
-          rate: number
-          negotiable: boolean
-      }
+      rateDetails?: RateType
       userDetails?: UserDetails
       otp?: 1234|number|null
       currentStep?: steps
@@ -43,6 +45,9 @@ export enum BidActionTypes {
 
 export type BidFunctions = {
     changeStep: (step: steps) => void;
+    addJourneyDetails: (data: JourneyDetailType) => void;
+    addRateDetails: (rateData: RateType) => void;
+    addUserDetails: (userData: UserDetails) => void;
 }
 
 

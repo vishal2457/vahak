@@ -56,6 +56,11 @@ $types: (
   justify-content: space-between;
 }
 
+.justify-content-center {
+  justify-content: center;
+}
+
+
 
 .pointer {
     cursor: pointer;
@@ -64,4 +69,69 @@ $types: (
 
 p{
   margin: 0
+}
+
+.w-40 {width: 40%;}
+.w-50 {width: 50%;}
+.w-60 {width: 60%;}
+.w-70 {width: 70%;}
+.w-100 {width: 100%;}
+
+
+.text-center {
+  text-align: center !important;
+}
+
+
+.lead {
+  font-weight: 700;
+}
+
+
+.col-25 {
+  float: left;
+  width: 25%;
+}
+
+.col-50 {
+  float: left;
+  width: 50%;
+}
+
+.col-50-right {
+  float: right;
+  width: 47%;
+}
+
+
+.col-75 {
+  float: left;
+  width: 75%;
+}
+
+
+@media screen and (max-width: 600px) {
+  .col-25, .col-75, .col-50, .col-50-right {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
 }
