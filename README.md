@@ -39,4 +39,4 @@ Project submitted by vishal acharya.
 ```
 ## Netlify app 
 
-[Link text Here](https://upbeat-yonath-267772.netlify.app/)
+[Live Demo](https://upbeat-yonath-267772.netlify.app/)
