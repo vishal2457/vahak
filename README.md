@@ -20,7 +20,7 @@ React suspense (lazy loading) for performance boost (It will be not needed in su
 -A little better folder structure.
 
 ## Folder structure
-
+```
   |-- Vahak
     |-- package.json
     |-- modules
@@ -36,7 +36,7 @@ React suspense (lazy loading) for performance boost (It will be not needed in su
                 |-- Subs
                     |-- Sub components used in steps main files.
 
-
+```
 ## Netlify app 
 
 [Link text Here](https://upbeat-yonath-267772.netlify.app/)
